@@ -1,13 +1,31 @@
 import './App.css'
+import {AdrianMap} from "./components/AdrianMap.tsx";
 import {AdrianViewer} from "./components/AdrianViewer.tsx";
+import {Provider} from "react-redux";
+import {store} from "./store/store.ts";
 
 function App() {
 
 	return (
-		<div className={"app-container"}>
-			<AdrianViewer/>
+		<Provider store={store}
+				  >
 
-		</div>
+			<div className={"app-container"}>
+
+				<div className={"half"}>
+
+					<div>
+						<AdrianViewer/>
+					</div>
+					<div>
+						<AdrianMap/>
+
+					</div>
+				</div>
+
+			</div>
+		</Provider>
+
 	)
 }
 
